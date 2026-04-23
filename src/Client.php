@@ -12,7 +12,7 @@ class Client
 
     public function __construct(
         string $apiKey,
-        string $baseUrl = 'https://api.emailalias.io',
+        string $baseUrl = 'https://emailalias.io',
         int $timeoutSeconds = 30
     ) {
         if ($apiKey === '') {

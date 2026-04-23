@@ -78,7 +78,7 @@ try {
 ```php
 $client = new Client(
     apiKey: 'ea_live_xxx',
-    baseUrl: 'https://api.emailalias.io', // override for staging / self-host
+    baseUrl: 'https://emailalias.io', // override for staging / self-host
     timeoutSeconds: 30
 );
 ```

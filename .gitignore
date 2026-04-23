@@ -1,0 +1,15 @@
+# Composer
+vendor/
+composer.lock
+composer.phar
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local config / secrets
+.env
+.env.*
+!.env.example

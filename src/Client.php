@@ -115,6 +115,28 @@ class Client
         return $this->request('PATCH', '/api/aliases/' . $aliasId, $options);
     }
 
+    /**
+     * Schedule a display-name change for an alias (Premium-only).
+     *
+     * Edits go through a 24-hour cooldown — the new value lands in
+     * `display_name_pending` and promotes to `display_name` 24h after the
+     * most recent edit. Capped at 3 edits per rolling 24h per alias. Pass
+     * `null` to clear the name; clearing follows the same cooldown.
+     *
+     * Brand-impersonation patterns (PayPal, Apple, banks, etc.) are
+     * rejected with 400 after homoglyph/leetspeak normalisation.
+     *
+     * @return array<string, mixed>
+     */
+    public function updateAliasDisplayName(string $aliasId, ?string $displayName): array
+    {
+        return $this->request(
+            'PATCH',
+            '/api/aliases/' . $aliasId . '/display-name',
+            ['display_name' => $displayName]
+        );
+    }
+
     public function deleteAlias(string $aliasId): void
     {
         $this->request('DELETE', '/api/aliases/' . $aliasId);

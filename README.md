@@ -90,6 +90,7 @@ $client = new Client(
 | `listAliases()` | `GET /api/aliases` |
 | `createAlias($options)` | `POST /api/aliases` |
 | `updateAlias($id, $options)` | `PATCH /api/aliases/{id}` |
+| `updateAliasDisplayName($id, $displayName)` | `PATCH /api/aliases/{id}/display-name` |
 | `deleteAlias($id)` | `DELETE /api/aliases/{id}` |
 | `listAvailableDomains()` | `GET /api/aliases/domains` |
 | `listDestinations()` | `GET /api/destinations` |
